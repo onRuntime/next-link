@@ -16,7 +16,12 @@
   "module": "dist/next-link.esm.js",
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build"
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
   },
   "dependencies": {
     "next": "^12.2.5",
@@ -25,11 +30,24 @@
     "url": "^0.11.0"
   },
   "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.0.1",
     "@types/node": "^18.7.5",
     "@types/react": "^18.0.17",
-    "@types/styled-components": "^5.1.26"
+    "@types/styled-components": "^5.1.26",
+    "tsdx": "^0.14.1",
+    "husky": "^8.0.1"
   },
   "engines": {
     "node": ">=12.22.0"
-  }
+  },
+  "size-limit": [
+    {
+      "path": "dist/next-link.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/next-link.esm.js",
+      "limit": "10 KB"
+    }
+  ]
 }
