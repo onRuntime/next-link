@@ -30,6 +30,6 @@
     "@types/styled-components": "^5.1.26"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=12.22.0"
   }
 }
