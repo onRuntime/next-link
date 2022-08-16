@@ -1,0 +1,25 @@
+{
+  "name": "@onruntime/next-link",
+  "version": "0.0.1",
+  "description": "Customized next/link for onRuntime Project",
+  "repository": "https://github.com/onRuntime/next-link",
+  "bugs": {
+    "url": "https://github.com/onRuntime/next-link/issues",
+    "email": "contact@onruntime.com"
+  },
+  "author": "AntoineKM",
+  "license": "MIT",
+  "packageManager": "yarn@3.2.0",
+  "homepage": "https://onruntime.com",
+  "main": "lib/src/index.js",
+  "types": "lib/typings/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "next": "^12.2.5",
+    "react": "^18.2.0",
+    "styled-components": "^5.3.5",
+    "url": "^0.11.0"
+  }
+}
