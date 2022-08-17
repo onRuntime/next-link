@@ -55,7 +55,7 @@ const Link = React.forwardRef<HTMLAnchorElement, Props>(
 Link.displayName = "Link";
 
 const Anchor = styled.a<Props>`
-  ${({ href, onClick }) => !href && !onClick && "cursor: default;"}
+  ${({ href, onClick }) => href || onClick ? "cursor: pointer;" :  "cursor: default;"}
 `;
 
 export default Link;
