@@ -81,4 +81,5 @@ var Anchor = /*#__PURE__*/styled.a(_templateObject || (_templateObject = /*#__PU
 });
 
 export default Link;
+export { isString };
 //# sourceMappingURL=next-link.esm.js.map

@@ -2,7 +2,7 @@ import NextLink, { LinkProps } from "next/link";
 import React from "react";
 import styled from "styled-components";
 import { UrlObject } from "url";
-import isString from "./utils/isString";
+import isString from "../../utils/isString";
 
 interface Props extends Omit<LinkProps, "href"> {
   className?: string;

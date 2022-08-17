@@ -1,45 +1,43 @@
 {
-  "name": "@onruntime/next-link",
-  "version": "0.0.1",
-  "description": "Customized next/link for onRuntime Project",
-  "repository": "https://github.com/onRuntime/next-link",
-  "bugs": {
-    "url": "https://github.com/onRuntime/next-link/issues",
-    "email": "contact@onruntime.com"
-  },
-  "author": "Antoine Kingue",
+  "version": "0.1.0",
   "license": "MIT",
-  "packageManager": "yarn@3.2.0",
-  "homepage": "https://onruntime.com",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "module": "dist/next-link.esm.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
-  "dependencies": {
-    "next": "^12.2.5",
-    "react": "^18.2.0",
-    "styled-components": "^5.3.5",
-    "url": "^0.11.0"
+  "peerDependencies": {
+    "next": ">=9",
+    "react": ">=16"
   },
-  "devDependencies": {
-    "@size-limit/preset-small-lib": "^8.0.1",
-    "@types/node": "^18.7.5",
-    "@types/react": "^18.0.17",
-    "@types/styled-components": "^5.1.26",
-    "tsdx": "^0.14.1",
-    "husky": "^8.0.1"
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
   },
-  "engines": {
-    "node": ">=14"
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
+  "name": "@onruntime/next-link",
+  "author": "Antoine Kingue",
+  "module": "dist/next-link.esm.js",
   "size-limit": [
     {
       "path": "dist/next-link.cjs.production.min.js",
@@ -49,5 +47,32 @@
       "path": "dist/next-link.esm.js",
       "limit": "10 KB"
     }
-  ]
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.0.1",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@types/styled-components": "^5.1.26",
+    "husky": "^8.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "size-limit": "^8.0.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1",
+    "eslint": "^8.22.0",
+    "eslint-config-next": "^12.2.5",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks":  "^4.6.0",
+    "prettier": "^2.7.1"
+
+  },
+  "dependencies": {
+    "next": "^12.2.5",
+    "styled-components": "^5.3.5"
+  }
 }

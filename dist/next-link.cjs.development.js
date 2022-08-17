@@ -87,4 +87,5 @@ var Anchor = /*#__PURE__*/styled.a(_templateObject || (_templateObject = /*#__PU
 });
 
 exports.default = Link;
+exports.isString = isString;
 //# sourceMappingURL=next-link.cjs.development.js.map

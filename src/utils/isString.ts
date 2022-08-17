@@ -1,4 +1,4 @@
-const isString = (x: any) => {
+const isString = (x: any): boolean => {
   return Object.prototype.toString.call(x) === "[object String]";
 };
 

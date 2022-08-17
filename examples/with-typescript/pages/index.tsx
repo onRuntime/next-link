@@ -1,10 +1,14 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import Link from "@onruntime/next-link"
+/* eslint-disable quotes */
+import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import Link from "@onruntime/next-link";
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
+  const router = useRouter();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -14,49 +18,102 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <h1 className={styles.title}>Welcome</h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
+          This is an example of{" "}
+          <Link
+            href={"https://npmjs.com/package/@onruntime/next-link"}
+            className={styles.code}
+          >
+            @onruntime/next-link
+          </Link>
         </p>
 
         <div className={styles.grid}>
-          <Link href="https://nextjs.org" className={styles.card}>
-            <h2>External Href &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          <code className={styles.code}>
-            {`<Link href="https://nextjs.org">`}
-            <br />
-                {`// ...`}
-                <br />
-              {`</Link>`}
-          </code>
+          <Link href="/hello-world" className={styles.card}>
+            <h2>Internal Href &rarr;</h2>
+            <p>Input</p>
+            <pre className={styles.code}>
+              <span>{`<Link href="/hello-world">`}</span>
+              <span>{`  // ...`}</span>
+              <span>{`</Link>`}</span>
+            </pre>
+            <p>Output</p>
+            <pre className={styles.code}>
+              <span>{`<a href="/hello-world">`}</span>
+              <span>{`  // ...`}</span>
+              <span>{`</a>`}</span>
+            </pre>
           </Link>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Internal Href &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+          <Link href="https://onruntime.com" className={styles.card}>
+            <h2>External Href &rarr;</h2>
+            <p>Input</p>
+            <pre className={styles.code}>
+              <span>{`<Link href="https://onruntime.com">`}</span>
+              <span>{`  // ...`}</span>
+              <span>{`</Link>`}</span>
+            </pre>
+            <p>Output</p>
+            <pre className={styles.code}>
+              <span>{`<a`}</span>
+              <span>{`  href="https://onruntime.com"`}</span>
+              <span>{`  target="_blank"`}</span>
+              <span>{`  rel="noopener noreferrer"`}</span>
+              <span>{`>`}</span>
+              <span>{`  // ...`}</span>
+              <span>{`</a>`}</span>
+            </pre>
+          </Link>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
+          <Link className={styles.card}>
             <h2>Undefined Href &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+            <p>Input</p>
+            <pre className={styles.code}>
+              <span>{`<Link>`}</span>
+              <span>{`  // ...`}</span>
+              <span>{`</Link>`}</span>
+            </pre>
+            <p>
+              Output (with{" "}
+              <code
+                className={styles.code}
+                style={{
+                  display: "inline-block",
+                }}
+              >
+                cursor: default
+              </code>
+              )
+            </p>
+            <pre className={styles.code}>
+              <span>{`<a>`}</span>
+              <span>{`  // ...`}</span>
+              <span>{`</a>`}</span>
+            </pre>
+          </Link>
 
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
+          <Link
+            onClick={() => router.push("/hello-world")}
             className={styles.card}
           >
             <h2>Undefined Href with onClick &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+            <p>Input</p>
+            <pre className={styles.code}>
+              <span>{`<Link`}</span>
+              <span>{`  onClick={() => router.push("/hello-world")}`}</span>
+              <span>{`>`}</span>
+              <span>{`  // ...`}</span>
+              <span>{`</Link>`}</span>
+            </pre>
+            <p>Output</p>
+            <pre className={styles.code}>
+              <span>{`<a>`}</span>
+              <span>{`  // ...`}</span>
+              <span>{`</a>`}</span>
+            </pre>
+          </Link>
         </div>
       </main>
 
@@ -66,14 +123,14 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
