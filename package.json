@@ -36,7 +36,7 @@
     "trailingComma": "es5"
   },
   "name": "@onruntime/next-link",
-  "description": "Customized next/link for @onRuntime nextjs projects",
+  "description": "Customized next/link for @onRuntime Next.js projects.",
   "author": "Antoine Kingue",
   "module": "dist/next-link.esm.js",
   "size-limit": [
