@@ -8,7 +8,9 @@
     "src"
   ],
   "engines": {
-    "node": ">=10"
+    "node": ">=10",
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.19.1"
   },
   "scripts": {
     "start": "tsdx watch",
@@ -75,7 +77,6 @@
     "next": "^12.2.5",
     "styled-components": "^5.3.5"
   },
-  "packageManager": "yarn@3.2.1",
   "publishConfig": {
     "access": "public"
   },
