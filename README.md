@@ -1,4 +1,4 @@
-# @onruntime/next-usetranslation
+# @onruntime/next-link
 
 Customized next/link for [@onRuntime](https://github.com/onRuntime) Next.js projects.
 
