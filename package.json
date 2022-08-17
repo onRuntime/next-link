@@ -36,6 +36,7 @@
     "trailingComma": "es5"
   },
   "name": "@onruntime/next-link",
+  "description": "Customized next/link for @onRuntime nextjs projects",
   "author": "Antoine Kingue",
   "module": "dist/next-link.esm.js",
   "size-limit": [
@@ -73,5 +74,21 @@
   "dependencies": {
     "next": "^12.2.5",
     "styled-components": "^5.3.5"
-  }
+  },
+  "packageManager": "yarn@3.2.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "https://github.com/onRuntime/next-link.git",
+  "bugs": {
+    "url": "https://github.com/onRuntime/next-link/issues"
+  },
+  "homepage": "https://next-link-with-typescript.vercel.app/",
+  "keywords": [
+    "next",
+    "nextjs",
+    "link",
+    "typescript",
+    "styled-components"
+  ]
 }
