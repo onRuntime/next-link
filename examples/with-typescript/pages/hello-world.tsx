@@ -3,11 +3,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "@onruntime/next-link";
-import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
-  const router = useRouter();
-
   return (
     <div className={styles.container}>
       <Head>
